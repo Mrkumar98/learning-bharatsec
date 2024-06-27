@@ -1,18 +1,17 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const Courses = () => {
-  // Fetch courses from your database
+const Course = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Fetch course data based on id
 
   return (
     <div>
-      <h1>Courses</h1>
-      <ul>
-        {/* Example course list */}
-        <li><Link href="/courses/course-1">Course 1</Link></li>
-        <li><Link href="/courses/course-2">Course 2</Link></li>
-      </ul>
+      <h1>Course: {id}</h1>
+      {/* Display course content here */}
     </div>
   );
 };
 
-export default Courses;
+export default Course;
